@@ -1,0 +1,27 @@
+# ==================== 服务端口 ====================
+server:
+  port: 8081    # 用户服务端口，后面商品服务用 8082，订单用 8083
+
+# ==================== 数据库连接 ====================
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mall_user?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+# ==================== MyBatis-Plus 配置 ====================
+mybatis-plus:
+  # 实体类所在的包
+  type-aliases-package: com.mall.user.entity
+  configuration:
+    # SQL 语句打印到控制台（开发时能看到执行的 SQL）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 驼峰自动转下划线（userName -> user_name），默认就是 true
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      # 逻辑删除字段
+      logic-delete-field: deleted
+      logic-delete-value: 1      # 已删除 = 1
+      logic-not-delete-value: 0  # 未删除 = 0

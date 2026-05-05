@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ==================== 父工程 ==================== -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.14</version>
+        <relativePath/>
+    </parent>
+
+    <!-- ==================== 坐标 ==================== -->
+    <groupId>com.mall</groupId>
+    <artifactId>mall-cloud</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <!-- 父工程必须声明为 pom，不写代码，只管聚合子模块 -->
+    <packaging>pom</packaging>
+
+    <!-- ==================== 统一版本号管理 ==================== -->
+    <properties>
+        <java.version>17</java.version>
+        <!-- 后面会在这里统一声明 MyBatis-Plus、Redis 等的版本 -->
+    </properties>
+
+    <!-- ==================== 子模块列表（暂时为空，后面一个个加） ==================== -->
+    <modules>
+        <!-- 接下来马上会添加 common 模块 -->
+        <module>common</module>
+        <module>user-service</module>
+    </modules>
+
+    <!-- 父工程不需要 dependencies 和 build 插件，全部删掉 -->
+
+</project>
