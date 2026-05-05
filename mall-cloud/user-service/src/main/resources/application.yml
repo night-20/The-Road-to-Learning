@@ -25,3 +25,17 @@ mybatis-plus:
       logic-delete-field: deleted
       logic-delete-value: 1      # 已删除 = 1
       logic-not-delete-value: 0  # 未删除 = 0
+
+#  ====== Redis 配置 ======
+      spring:
+        data:
+          redis:
+            host: localhost       # Redis 地址
+            port: 6379            # Redis 端口
+            password:             # 你的 Redis 密码，没有就留空
+            lettuce: # 使用 Lettuce 连接池
+              pool:
+                max-active: 8     # 最大连接数
+                max-idle: 8       # 最大空闲连接
+                min-idle: 0       # 最小空闲连接
+                max-wait: -1ms    # 获取连接最大等待时间，-1 表示无限等待
